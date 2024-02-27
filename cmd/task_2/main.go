@@ -18,14 +18,12 @@ type Admin struct {
 
 // Здесь должна быть функция изменения имени пользователя
 func renameUser(user interface{}, newName string) {
-	switch user.(type) {
+	switch typedUser := user.(type) {
 	case *User:
-		user := user.(*User)
-		user.Name = newName
+		typedUser.Name = newName
 	case *Admin:
-		user := user.(*Admin)
-		if user.Access < 3 {
-			user.Name = newName
+		if typedUser.Access < 3 {
+			typedUser.Name = newName
 		}
 	}
 }
