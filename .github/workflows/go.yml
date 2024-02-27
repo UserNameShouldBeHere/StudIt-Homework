@@ -1,0 +1,24 @@
+name: homework-test
+
+on: [ push ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21
+ 
+      - name: build
+        run: go build ./cmd/task_1/main.go
+        run: go build ./cmd/task_2/main.go
+        run: go build ./cmd/task_3/main.go
+
+      - name: test
+        run: go test -v ./...
