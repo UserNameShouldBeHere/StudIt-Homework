@@ -29,7 +29,7 @@ func TestGetFiles(t *testing.T) {
 		t.Error(err)
 	}
 
-	for i, _ := range files {
+	for i := range files {
 		files[i] = strings.ReplaceAll(files[i], "\\", "/")
 	}
 
