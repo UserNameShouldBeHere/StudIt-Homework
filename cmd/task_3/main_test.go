@@ -35,6 +35,7 @@ func TestGetFiles(t *testing.T) {
 
 	result := []string{
 		"../../cmd/task_1/main.go",
+		"../../cmd/task_1/main_test.go",
 		"../../cmd/task_2/main.go",
 		"../../cmd/task_2/main_test.go",
 		"../../cmd/task_3/main.go",
